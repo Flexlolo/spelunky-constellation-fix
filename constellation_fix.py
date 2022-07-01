@@ -51,7 +51,7 @@ def main():
 
 		strings = strings_read(file)
 		strings_patched = {k: strings[v] for k, v in mapping.items()}
-		strings_write(os.path.join(destination, file), strings_patched)
+		strings_write(os.path.join(destination, file.replace('_hashed', '_mod')), strings_patched)
 
 	try:
 		tar = tarfile.open(folder + '.tar.xz', 'x:xz')
